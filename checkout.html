@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Favicon - Primary -->
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+<link rel="shortcut icon" href="/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="M.F.">
+<link rel="manifest" href="/favicon/site.webmanifest">
+
+<title>Checkout — MR.FANTASTIC</title>
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/checkout.css">
+<meta name="robots" content="noindex, follow">
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="images/FantasticLogo.svg" alt="MR.FANTASTIC Logo" class="logo-img">
+  </a>
+  <div class="nav-right">
+    <a href="shop.html" class="nav-shop-icon" aria-label="Shop">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <path d="M16 10a4 4 0 01-8 0"/>
+      </svg>
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MENU OVERLAY -->
+<div class="menu-overlay" id="menuOverlay">
+  <a href="index.html">Home</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="shop.html">Shop</a>
+  <a href="about.html">About</a>
+  <a href="commission.html">Commission</a>
+  <a href="contact.html">Contact</a>
+  <div class="menu-social">
+    <a href="https://www.instagram.com/mr.fantastic_himself?igsh=MThpeDRyM3cyNDVtcQ==" target="_blank" rel="noopener">INSTAGRAM (BIZ)</a>
+    <a href="https://www.instagram.com/1real.fantastic?igsh=bTJzbXhlbjJ1ZHN1" target="_blank" rel="noopener">INSTAGRAM (PERSONAL)</a>
+    <a href="https://www.tiktok.com/@1real.fantastic_himself?_r=1&_t=ZS-95LBvkgoq8u" target="_blank" rel="noopener">TIKTOK</a>
+    <a href="https://x.com/1realfantastic?s=11" target="_blank" rel="noopener">X</a>
+  </div>
+</div>
+
+<!-- CHECKOUT WRAPPER -->
+<main class="checkout-page">
+
+  <!-- STEP INDICATOR -->
+  <div class="checkout-steps">
+    <div class="checkout-step active" id="stepDot1">
+      <div class="step-dot">1</div>
+      <span>Delivery</span>
+    </div>
+    <div class="checkout-step-line"></div>
+    <div class="checkout-step" id="stepDot2">
+      <div class="step-dot">2</div>
+      <span>Payment</span>
+    </div>
+    <div class="checkout-step-line"></div>
+    <div class="checkout-step" id="stepDot3">
+      <div class="step-dot">3</div>
+      <span>Confirm</span>
+    </div>
+  </div>
+
+  <div class="checkout-layout">
+
+    <!-- LEFT: FORM PANELS -->
+    <div class="checkout-form-col">
+
+      <!-- ── STEP 1: DELIVERY ─────────────────────────── -->
+      <div class="checkout-panel" id="panelDelivery">
+        <div class="panel-header">
+          <span class="section-label">Step 01</span>
+          <h2>DELIVERY<br>DETAILS</h2>
+        </div>
+
+        <div class="cf-grid">
+          <div class="cf-field">
+            <label for="coName">Full name <span class="req">*</span></label>
+            <input type="text" id="coName" placeholder="Your full name" autocomplete="off">
+          </div>
+          <div class="cf-field">
+            <label for="coEmail">Email address <span class="req">*</span></label>
+            <input type="email" id="coEmail" placeholder="you@email.com" autocomplete="off">
+          </div>
+          <div class="cf-field">
+            <label for="coPhone">Mobile number <span class="req">*</span></label>
+            <input type="tel" id="coPhone" placeholder="+1 234 567 8900" autocomplete="off">
+          </div>
+          <div class="cf-field cf-full">
+            <label for="coAddr">Delivery address <span class="req">*</span></label>
+            <input type="text" id="coAddr" placeholder="Street address, apartment, unit…" autocomplete="off">
+          </div>
+          <div class="cf-field">
+            <label for="coCity">City <span class="req">*</span></label>
+            <input type="text" id="coCity" placeholder="City" autocomplete="off">
+          </div>
+          <div class="cf-field">
+            <label for="coState">State / Region</label>
+            <input type="text" id="coState" placeholder="State or region" autocomplete="off">
+          </div>
+          <div class="cf-field">
+            <label for="coZip">Postcode / ZIP <span class="req">*</span></label>
+            <input type="text" id="coZip" placeholder="Postcode" autocomplete="off">
+          </div>
+          <div class="cf-field">
+            <label for="coCountry">Country <span class="req">*</span></label>
+            <select id="coCountry">
+              <option value="">Select country</option>
+              <option>Ghana</option>
+              <option>Nigeria</option>
+              <option>South Africa</option>
+              <option>Kenya</option>
+              <option>United States</option>
+              <option>United Kingdom</option>
+              <option>Canada</option>
+              <option>Australia</option>
+              <option>Germany</option>
+              <option>France</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="cf-field cf-full">
+            <label for="coNotes">Delivery notes (optional)</label>
+            <input type="text" id="coNotes" placeholder="Gate code, landmark, special instructions…">
+          </div>
+        </div>
+
+        <button class="checkout-next-btn" id="deliveryNextBtn">Continue to Payment →</button>
+        <p class="back-link"><a href="shop.html">← Back to shop</a></p>
+      </div>
+
+      <!-- ── STEP 2: PAYMENT ──────────────────────────── -->
+      <div class="checkout-panel" id="panelPayment" style="display:none;">
+        <div class="panel-header">
+          <span class="section-label">Step 02</span>
+          <h2>PAYMENT<br>METHOD</h2>
+        </div>
+
+        <div class="payment-methods">
+
+          <label class="payment-option" id="payCard">
+            <input type="radio" name="payMethod" value="card">
+            <div class="pay-radio-box">
+              <div class="pay-icon">
+                <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+              </div>
+              <div class="pay-info">
+                <span class="pay-name">Credit / Debit Card</span>
+                <span class="pay-sub">Visa, Mastercard, Amex</span>
+              </div>
+              <div class="pay-check">✓</div>
+            </div>
+            <div class="pay-details card-details">
+              <div class="cf-grid">
+                <div class="cf-field cf-full">
+                  <label>Card number</label>
+                  <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" autocomplete="off">
+                </div>
+                <div class="cf-field">
+                  <label>Expiry</label>
+                  <input type="text" id="cardExpiry" placeholder="MM / YY" maxlength="7" autocomplete="off">
+                </div>
+                <div class="cf-field">
+                  <label>CVV</label>
+                  <input type="text" id="cardCvv" placeholder="123" maxlength="4" autocomplete="off">
+                </div>
+                <div class="cf-field cf-full">
+                  <label>Name on card</label>
+                  <input type="text" id="cardName" placeholder="As it appears on card" autocomplete="off">
+                </div>
+              </div>
+            </div>
+          </label>
+
+          <label class="payment-option" id="payMomo">
+            <input type="radio" name="payMethod" value="momo">
+            <div class="pay-radio-box">
+              <div class="pay-icon">
+                <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="18" r="1"/><line x1="9" y1="7" x2="15" y2="7"/></svg>
+              </div>
+              <div class="pay-info">
+                <span class="pay-name">Mobile Money</span>
+                <span class="pay-sub">MTN, Vodafone, AirtelTigo</span>
+              </div>
+              <div class="pay-check">✓</div>
+            </div>
+            <div class="pay-details momo-details">
+              <div class="cf-grid">
+                <div class="cf-field">
+                  <label>Network</label>
+                  <select id="momoNetwork">
+                    <option value="">Select network</option>
+                    <option>MTN Mobile Money</option>
+                    <option>Vodafone Cash</option>
+                    <option>AirtelTigo Money</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="cf-field">
+                  <label>MoMo number</label>
+                  <input type="tel" id="momoNumber" placeholder="024 XXX XXXX" autocomplete="off">
+                </div>
+              </div>
+            </div>
+          </label>
+
+          <label class="payment-option" id="payPaypal">
+            <input type="radio" name="payMethod" value="paypal">
+            <div class="pay-radio-box">
+              <div class="pay-icon">
+                <svg viewBox="0 0 24 24"><path d="M7 11C5.3 11 4 9.7 4 8V5h10c1.7 0 3 1.3 3 3s-1.3 3-3 3H7z"/><path d="M5 11v8h4l1-4h4c1.7 0 3-1.3 3-3s-1.3-3-3-3H5z"/></svg>
+              </div>
+              <div class="pay-info">
+                <span class="pay-name">PayPal</span>
+                <span class="pay-sub">Pay via your PayPal account</span>
+              </div>
+              <div class="pay-check">✓</div>
+            </div>
+            <div class="pay-details paypal-details">
+              <div class="cf-grid">
+                <div class="cf-field cf-full">
+                  <label>PayPal email</label>
+                  <input type="email" id="paypalEmail" placeholder="your@paypal.com" autocomplete="off">
+                </div>
+              </div>
+            </div>
+          </label>
+
+          <label class="payment-option" id="payTransfer">
+            <input type="radio" name="payMethod" value="transfer">
+            <div class="pay-radio-box">
+              <div class="pay-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              </div>
+              <div class="pay-info">
+                <span class="pay-name">Bank Transfer</span>
+                <span class="pay-sub">Direct bank / wire transfer</span>
+              </div>
+              <div class="pay-check">✓</div>
+            </div>
+            <div class="pay-details transfer-details">
+              <p class="pay-transfer-note">Bank details will be emailed to you after you confirm the order. Your order is reserved for <strong>48 hours</strong> pending transfer.</p>
+            </div>
+          </label>
+
+        </div>
+
+        <div class="payment-actions">
+          <button class="checkout-back-btn" id="paymentBackBtn">← Back</button>
+          <button class="checkout-next-btn" id="paymentNextBtn">Review Order →</button>
+        </div>
+      </div>
+
+      <!-- ── STEP 3: CONFIRM ──────────────────────────── -->
+      <div class="checkout-panel" id="panelConfirm" style="display:none;">
+        <div class="panel-header">
+          <span class="section-label">Step 03</span>
+          <h2>REVIEW &amp;<br>CONFIRM</h2>
+        </div>
+
+        <div class="confirm-section">
+          <span class="confirm-label">Delivering to</span>
+          <div class="confirm-block" id="confirmDelivery"></div>
+        </div>
+
+        <div class="confirm-section">
+          <span class="confirm-label">Payment via</span>
+          <div class="confirm-block" id="confirmPayment"></div>
+        </div>
+
+        <div class="confirm-section">
+          <span class="confirm-label">Order summary</span>
+          <div class="confirm-block" id="confirmOrder"></div>
+        </div>
+
+        <div class="confirm-total">
+          <span>Total due</span>
+          <span id="confirmTotal" class="confirm-total-price"></span>
+        </div>
+
+        <div class="confirm-terms">
+          <label class="terms-check">
+            <input type="checkbox" id="agreeTerms">
+            <span>I confirm my details are correct and agree to MR.FANTASTIC's order terms.</span>
+          </label>
+        </div>
+
+        <div class="payment-actions">
+          <button class="checkout-back-btn" id="confirmBackBtn">← Back</button>
+          <button class="checkout-next-btn confirm-pay-btn" id="placeOrderBtn" disabled>Place Order →</button>
+        </div>
+      </div>
+
+    </div><!-- END .checkout-form-col -->
+
+    <!-- RIGHT: ORDER SUMMARY SIDEBAR -->
+    <aside class="checkout-sidebar">
+      <div class="sidebar-inner">
+        <span class="section-label">Your order</span>
+
+        <div class="sidebar-art">
+          <img id="sidebarImg" src="" alt="" loading="lazy">
+          <div class="sidebar-art-overlay"></div>
+        </div>
+
+        <div class="sidebar-details">
+          <p class="sidebar-title" id="sidebarTitle">—</p>
+          <p class="sidebar-tag" id="sidebarTag">—</p>
+
+          <div class="sidebar-row">
+            <span>Format</span>
+            <span id="sidebarFormat">—</span>
+          </div>
+          <div class="sidebar-row sidebar-total-row">
+            <span>Total</span>
+            <span id="sidebarTotal" class="sidebar-price">—</span>
+          </div>
+        </div>
+
+        <div class="sidebar-trust">
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Secure checkout</span>
+          </div>
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            <span>MR.FANTASTIC responds within 24h</span>
+          </div>
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+            <span>Numbered &amp; certified piece</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+  </div><!-- END .checkout-layout -->
+
+  <!-- SUCCESS STATE -->
+  <div class="checkout-success" id="checkoutSuccess" style="display:none;">
+    <div class="success-glow"></div>
+    <div class="success-content">
+      <span class="section-label">Order received</span>
+      <h1>IT'S<br><span>LOCKED IN.</span></h1>
+      <p class="success-msg">Your order has been placed. MR.FANTASTIC will be in touch within 24 hours to confirm and arrange fulfilment.</p>
+      <p class="success-sub" id="successEmail"></p>
+      <div class="success-actions">
+        <a href="index.html" class="error-btn primary">Back to Home</a>
+        <a href="portfolio.html" class="error-btn secondary">Explore More Art</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <a href="index.html" class="footer-logo">MR<span>.</span>FANTASTIC</a>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/mr.fantastic_himself?igsh=MThpeDRyM3cyNDVtcQ==" target="_blank" rel="noopener">Instagram (Biz)</a>
+    <a href="https://www.instagram.com/1real.fantastic?igsh=bTJzbXhlbjJ1ZHN1" target="_blank" rel="noopener">Instagram (Personal)</a>
+    <a href="https://www.tiktok.com/@1real.fantastic_himself?_r=1&_t=ZS-95LBvkgoq8u" target="_blank" rel="noopener">TikTok</a>
+    <a href="https://x.com/1realfantastic?s=11" target="_blank" rel="noopener">X</a>
+    <a href="commission.html">Commission</a>
+  </div>
+  <p class="footer-copy">© 2025 MR.FANTASTIC. All rights reserved.</p>
+</footer>
+
+<script src="js/script.js"></script>
+<script src="js/shop.js"></script>
+</body>
+</html>

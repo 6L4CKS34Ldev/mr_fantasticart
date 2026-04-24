@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+<link rel="shortcut icon" href="/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="M.F.">
+<link rel="manifest" href="/favicon/site.webmanifest">
+
+<title>Portfolio — MR.FANTASTIC</title>
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/portfolio.css">
+<!-- SEO Meta Tags -->
+<meta name="description" content="Full portfolio of MR.FANTASTIC — fan art, original characters, and commissioned illustrations.">
+<meta name="keywords" content="portfolio, digital art, fan art, marvel art, anime art, original art, commissions">
+
+<!-- Open Graph / Facebook / Instagram / iMessage -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mrfantastic.art/portfolio.html">
+<meta property="og:title" content="Portfolio — MR.FANTASTIC">
+<meta property="og:description" content="Every piece. Every world. Every vision. Explore the full collection.">
+<meta property="og:image" content="https://mrfantastic.art/images/Sailor%20Big%20Sexy.JPG">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="MR.FANTASTIC">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://mrfantastic.art/portfolio.html">
+<meta name="twitter:title" content="Portfolio — MR.FANTASTIC">
+<meta name="twitter:description" content="Every piece. Every world. Every vision.">
+<meta name="twitter:image" content="https://mrfantastic.art/images/Sailor%20Big%20Sexy.JPG">
+
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="images/FantasticLogo.svg" alt="MR.FANTASTIC Logo" class="logo-img">
+  </a>
+  <div class="nav-right">
+    <a href="shop.html" class="nav-shop-icon" aria-label="Shop">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <path d="M16 10a4 4 0 01-8 0"/>
+      </svg>
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MENU OVERLAY -->
+<div class="menu-overlay" id="menuOverlay">
+  <a href="index.html">Home</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="about.html">About</a>
+  <a href="commission.html">Commission</a>
+  <a href="shop.html">Shop</a>
+  <a href="contact.html">Contact</a>
+  <div class="menu-social">
+    <a href="#">INSTAGRAM</a>
+    <a href="#">TIKTOK</a>
+    <a href="#">FACEBOOK</a>
+  </div>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header portfolio-header" data-watermark="PORTFOLIO">
+  <span class="section-label">MR.FANTASTIC</span>
+  <h1>THE<br>FULL WORKS</h1>
+  <p>Every piece. Every world. Every vision.</p>
+</div>
+
+<!-- FILTERS -->
+<div class="filters" id="filters">
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="fan-art">Fan Art</button>
+  <button class="filter-btn" data-filter="original">Original</button>
+  <button class="filter-btn" data-filter="commission">Commission</button>
+  <button class="filter-btn" data-filter="portrait">Portrait</button>
+</div>
+
+<!-- GRID -->
+<div class="portfolio-grid" id="portfolioGrid">
+
+  <div class="portfolio-item" data-cat="commission portrait" data-title="Gold & Smoke" data-tag="Commission · Original · Portrait">
+    <img src="images/Gold & Smoke.jpg" alt="Gold & Smoke" loading="lazy">
+    <div class="portfolio-expand"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+    <div class="portfolio-info">
+      <p class="work-name">Gold &amp; Smoke</p>
+      <p class="work-tag">Commission · Original · Portrait</p>
+    </div>
+  </div>
+
+  <div class="portfolio-item" data-cat="fan-art portrait" data-title="The Reach/Juice WRLD" data-tag="Fan-art · Portrait">
+    <img src="images/The.Reach.Juice WRLD.JPG" alt="The Reach/Juice WRLD" loading="lazy">
+    <div class="portfolio-expand"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+    <div class="portfolio-info">
+      <p class="work-name">The Reach/Juice WRLD</p>
+      <p class="work-tag">Fan Art · Portrait</p>
+    </div>
+  </div>
+
+  <div class="portfolio-item" data-cat="fan-art" data-title="Jinx" data-tag="Fan Art · Arcane">
+    <img src="images/Jinx.JPG" alt="Jinx" loading="lazy">
+    <div class="portfolio-expand"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+    <div class="portfolio-info">
+      <p class="work-name">Jinx</p>
+      <p class="work-tag">Fan Art · Arcane</p>
+    </div>
+  </div>
+
+  <div class="portfolio-item" data-cat="fan-art" data-title="Wolverine vs Deadpool" data-tag="Fan Art · Marvel">
+    <img src="images/Wolverine vs Deadpool.JPG" alt="Wolverine vs Deadpool" loading="lazy">
+    <div class="portfolio-expand"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+    <div class="portfolio-info">
+      <p class="work-name">Wolverine vs Deadpool</p>
+      <p class="work-tag">Fan Art · Marvel</p>
+    </div>
+  </div>
+
+  <div class="portfolio-item" data-cat="original" data-title="Crown of Thorns/K.Dot" data-tag="Original · Dark Art">
+    <img src="images/CrownofThorns.K.Dot.JPG" alt="Crown of Thorns/K.Dot" loading="lazy">
+    <div class="portfolio-expand"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+    <div class="portfolio-info">
+      <p class="work-name">Crown of Thorns/K.Dot</p>
+      <p class="work-tag">Original · Dark Art</p>
+    </div>
+  </div>
+
+  <div class="portfolio-item" data-cat="fan-art" data-title="The Flash/ISHOWSPEED" data-tag="Fan Art · Comics">
+    <img src="images/The.Flash.ISHOWSPEED.JPG" alt="The Flash/ISHOWSPEED" loading="lazy">
+    <div class="portfolio-expand"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+    <div class="portfolio-info">
+      <p class="work-name">The Flash/ISHOWSPEED</p>
+      <p class="work-tag">Fan Art · Comics</p>
+    </div>
+  </div>
+
+  <div class="portfolio-item" data-cat="fan-art" data-title="Sailor Big Sexy" data-tag="Fan Art · Anime">
+    <img src="images/Sailor Big Sexy.JPG" alt="Sailor Big Sexy" loading="lazy">
+    <div class="portfolio-expand"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+    <div class="portfolio-info">
+      <p class="work-name">Sailor Big Sexy</p>
+      <p class="work-tag">Fan Art · Anime</p>
+    </div>
+  </div>
+
+  <div class="portfolio-item" data-cat="original" data-title="Tattoo Session/MIGOS" data-tag="Original · Narrative">
+    <img src="images/Tattoo.Session.MIGOS.JPG" alt="Tattoo Session/MIGOS" loading="lazy">
+    <div class="portfolio-expand"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+    <div class="portfolio-info">
+      <p class="work-name">Tattoo Session/MIGOS</p>
+      <p class="work-tag">Original · Narrative</p>
+    </div>
+  </div>
+
+  <div class="portfolio-item" data-cat="commission portrait" data-title="Grammy Boy" data-tag="Commission · Original · Portrait">
+    <img src="images/Grammy.Boy.JPG" alt="Grammy Boy" loading="lazy">
+    <div class="portfolio-expand"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+    <div class="portfolio-info">
+      <p class="work-name">Grammy Boy</p>
+      <p class="work-tag">Commission · Original · Portrait</p>
+    </div>
+  </div>
+
+  <div class="portfolio-item" data-cat="fan-art" data-title="Spider-Punk/Hobby Brown" data-tag="Fan Art · Marvel">
+    <img src="images/Spider.Punk.Hobby.Brown.JPG" alt="Spider-Punk/Hobby Brown" loading="lazy">
+    <div class="portfolio-expand"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+    <div class="portfolio-info">
+      <p class="work-name">Spider-Punk/Hobby Brown</p>
+      <p class="work-tag">Fan Art · Marvel</p>
+    </div>
+  </div>
+
+  <div class="portfolio-item" data-cat="fan-art portrait" data-title="Naruto/Juice WRLD" data-tag="Fan Art · Naruto">
+    <img src="images/Naruto.juice.WRLD.PNG" alt="Naruto/Juice WRLD" loading="lazy">
+    <div class="portfolio-expand"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+    <div class="portfolio-info">
+      <p class="work-name">Naruto/Juice WRLD</p>
+      <p class="work-tag">Fan Art · Naruto</p>
+    </div>
+  </div>
+
+  <div class="portfolio-item" data-cat="fan-art" data-title="KINGVON" data-tag="Fan Art · Portrait">
+    <img src="images/KINGVON.JPG" alt="KINGVON" loading="lazy">
+    <div class="portfolio-expand"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+    <div class="portfolio-info">
+      <p class="work-name">KINGVON</p>
+      <p class="work-tag">Fan Art · Portrait</p>
+    </div>
+  </div>
+
+</div><!-- END .portfolio-grid -->
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" id="lightboxClose">✕ &nbsp;CLOSE</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    <button class="lightbox-nav lightbox-next" id="lightboxNext">
+      <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    <div class="lightbox-meta">
+      <span class="section-label" id="lightboxTag"></span>
+      <h2 id="lightboxTitle"></h2>
+      <p>@mrfantastic_himself</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- COMMISSION BANNER -->
+<div class="commission-banner">
+  <div class="commission-banner-glow"></div>
+  <div class="commission-text">
+    <span class="label">Work with MR.FANTASTIC</span>
+    <h2>Got a vision?<br>Let's build it.</h2>
+    <p>Custom commissions open. Pop culture mashups, portraits, original concepts — send your idea and let's make something unforgettable.</p>
+  </div>
+  <a href="commission.html" class="btn-commission">Request a commission</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a href="index.html" class="footer-logo">MR<span>.</span>FANTASTIC</a>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/mr.fantastic_himself?igsh=MThpeDRyM3cyNDVtcQ==" target="_blank" rel="noopener">Instagram (Biz)</a>
+    <a href="https://www.instagram.com/1real.fantastic?igsh=bTJzbXhlbjJ1ZHN1" target="_blank" rel="noopener">Instagram (Personal)</a>
+    <a href="https://www.tiktok.com/@1real.fantastic_himself?_r=1&_t=ZS-95LBvkgoq8u" target="_blank" rel="noopener">TikTok</a>
+    <a href="https://x.com/1realfantastic?s=11" target="_blank" rel="noopener">X</a>
+    <a href="commission.html">Commission</a>
+    <a href="shop.html">Shop</a>
+  </div>
+  <p class="footer-copy">© 2025 MR.FANTASTIC. All rights reserved.</p>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script src="js/script.js"></script>
+</body>
+</html>

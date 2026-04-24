@@ -1,0 +1,334 @@
+/* portfolio.css — Page-specific styles for portfolio.html
+   Requires: css/style.css (loaded via <link> in HTML)
+   -------------------------------------------------------- */
+
+/* PAGE HEADER — portfolio variant */
+.page-header.portfolio-header {
+  padding: 10rem 2rem 4rem;
+}
+.page-header.portfolio-header::before {
+  font-size: clamp(4rem, 15vw, 14rem);
+  letter-spacing: 8px;
+  color: rgba(112, 80, 80, 0.676);
+  z-index: -1;
+}
+
+/* FILTERS */
+.filters {
+  padding: 0 2rem 3rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.filter-btn {
+  font-family: var(--font-condensed);
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  padding: 0.6rem 1.5rem;
+  border: 1px solid #222;
+  background: none;
+  color: #555;
+  cursor: none;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+}
+.filter-btn:hover,
+.filter-btn.active {
+  border-color: var(--red);
+  color: var(--white);
+  background: transparent;
+}
+.filter-btn.active {
+  background: var(--red);
+  border-color: var(--red);
+}
+
+/* PORTFOLIO GRID */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  padding: 0 2rem 6rem;
+}
+
+.portfolio-item {
+  position: relative;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  background: #111;
+  cursor: none;
+}
+.portfolio-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.portfolio-item:hover img {
+  transform: scale(1.06);
+}
+
+.portfolio-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,10,10,0.95) 0%, transparent 55%);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.portfolio-item:hover::before {
+  opacity: 1;
+}
+
+.portfolio-info {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 1.5rem;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.35s ease;
+}
+.portfolio-item:hover .portfolio-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.portfolio-info .work-name {
+  font-family: var(--font-condensed);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--white);
+  text-transform: uppercase;
+}
+.portfolio-info .work-tag {
+  font-family: var(--font-condensed);
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+  color: var(--red);
+  margin-top: 4px;
+}
+
+/* EXPAND ICON */
+.portfolio-expand {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  z-index: 2;
+  width: 36px; height: 36px;
+  border: 1px solid rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: rgba(10,10,10,0.5);
+}
+.portfolio-item:hover .portfolio-expand {
+  opacity: 1;
+}
+.portfolio-expand svg {
+  width: 14px; height: 14px;
+  fill: none;
+  stroke: var(--white);
+  stroke-width: 2;
+}
+
+/* LIGHTBOX */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  padding: 2rem;
+}
+.lightbox.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.lightbox-inner {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+.lightbox-img {
+  max-height: 85vh;
+  max-width: 60vw;
+  object-fit: contain;
+  display: block;
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+.lightbox.open .lightbox-img {
+  transform: scale(1);
+}
+
+.lightbox-meta {
+  min-width: 200px;
+}
+.lightbox-meta .section-label {
+  margin-bottom: 1rem;
+}
+.lightbox-meta h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  line-height: 1;
+  letter-spacing: 2px;
+  margin-bottom: 0.75rem;
+}
+.lightbox-meta p {
+  font-family: var(--font-condensed);
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  color: #555;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -2rem; right: 0;
+  background: none;
+  border: none;
+  font-family: var(--font-condensed);
+  font-size: 0.7rem;
+  letter-spacing: 4px;
+  color: #555;
+  cursor: none;
+  transition: color 0.2s;
+}
+.lightbox-close:hover {
+  color: var(--white);
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: 1px solid #333;
+  color: var(--white);
+  width: 44px; height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+.lightbox-nav:hover {
+  border-color: var(--red);
+  background: var(--red);
+}
+.lightbox-prev { left: -3.5rem; }
+.lightbox-next { right: -3.5rem; }
+.lightbox-nav svg {
+  width: 16px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+}
+
+/* RESPONSIVE */
+@media (hover: none) and (pointer: coarse) {
+  /* Always show info overlay on touch devices */
+  .portfolio-item::before { opacity: 1; }
+  .portfolio-info {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .portfolio-expand { opacity: 1; }
+}
+
+@media (max-width: 900px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 1.25rem 4rem;
+  }
+  .lightbox-inner {
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 95vw;
+    align-items: center;
+  }
+  .lightbox-img {
+    max-width: 90vw;
+    max-height: 55vh;
+  }
+  .lightbox-meta {
+    min-width: unset;
+    text-align: center;
+    padding-bottom: 1rem;
+    width: 100%;
+  }
+  .lightbox-meta h2 {
+    font-size: 1.4rem;
+  }
+  .lightbox-nav {
+    display: none;
+  }
+  .lightbox-close {
+    top: -2.5rem;
+    right: 0;
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 3px;
+    padding: 0 1.25rem 4rem;
+  }
+  .portfolio-item {
+    aspect-ratio: 3/4;
+  }
+  .filters {
+    padding: 0 1.25rem 2rem;
+    gap: 0.5rem;
+  }
+  .filter-btn {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  .page-header {
+    padding: 7rem 1.25rem 3rem;
+  }
+  .lightbox {
+    padding: 1rem;
+    align-items: flex-end;
+  }
+  .lightbox-inner {
+    max-height: 95vh;
+    overflow-y: auto;
+    width: 100%;
+  }
+  .lightbox-img {
+    max-height: 50vh;
+    max-width: 100%;
+  }
+  .lightbox-close {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background: var(--black);
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #333;
+    cursor: pointer;
+  }
+  /* Swipe hint nav on mobile */
+  .lightbox-meta p {
+    font-size: 0.65rem;
+  }
+}

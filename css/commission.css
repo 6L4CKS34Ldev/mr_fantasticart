@@ -1,0 +1,396 @@
+/* commission.css — Page-specific styles for commission.html
+   Requires: css/style.css (loaded via <link> in HTML)
+   -------------------------------------------------------- */
+
+/* STATUS BADGE */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: 1px solid #babbba;
+  padding: 0.6rem 1.25rem;
+  margin-top: 2rem;
+  font-family: var(--font-condensed);
+  font-size: 0.95rem;
+  letter-spacing: 4px;
+  color: #af4c4c;
+  text-transform: uppercase;
+}
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4caf50;
+  animation: blink 2s infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+/* TIERS */
+.tiers-section {
+  padding: 0 1.4rem 6rem;
+}
+.tiers-label {
+  margin-bottom: 3rem;
+}
+.tiers-label h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  letter-spacing: 5px;
+}
+
+.tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.tier-card {
+  border: 1px solid #7f7e7e;
+  padding: 3rem 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+.tier-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--red);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.tier-card:hover {
+  border-color: #731111;
+}
+.tier-card:hover::before {
+  transform: scaleX(1);
+}
+
+.tier-card.featured {
+  border-color: var(--red);
+}
+.tier-card.featured::before {
+  transform: scaleX(1);
+}
+
+.tier-badge {
+  font-family: var(--font-condensed);
+  font-size: 0.85rem;
+  letter-spacing: 7px;
+  color: var(--red);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+.tier-card.featured .tier-badge::before {
+  content: "★ ";
+}
+
+.tier-name {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.tier-desc {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: #bb7373;
+  line-height: 1.6;
+  margin: 1.5rem 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid #cecccc;
+}
+
+.tier-features {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+.tier-features li {
+  font-family: var(--font-condensed);
+  font-size: 1rem;
+  letter-spacing: 2px;
+  color: #b4b4b4;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #543232;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.tier-features li::before {
+  content: "—";
+  color: var(--red);
+  flex-shrink: 0;
+}
+.tier-features li.included {
+  color: #999;
+}
+
+.tier-cta {
+  display: block;
+  padding: 1rem 0;
+  text-align: center;
+  border: 1px solid #b16060;
+  font-family: var(--font-condensed);
+  font-size: 0.95rem;
+  letter-spacing: 4px;
+  color: #964747;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.25s ease;
+}
+.tier-cta:hover,
+.tier-card.featured .tier-cta {
+  background: var(--red);
+  border-color: var(--red);
+  color: var(--white);
+}
+
+/* FORM SECTION */
+.form-section {
+  padding: 0 2rem 6rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+.form-info .section-label {
+  margin-bottom: 1.5rem;
+}
+.form-info h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+}
+
+.form-steps {
+  list-style: none;
+}
+.form-steps li {
+  display: flex;
+  gap: 1.25rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid #863838;
+}
+.form-steps li:last-child {
+  border-bottom: none;
+}
+.step-num {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  color: var(--red);
+  flex-shrink: 0;
+  width: 2rem;
+}
+.step-text {
+  font-family: var(--font-condensed);
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  color: #bb6565;
+  line-height: 1.5;
+}
+.step-text strong {
+  color: #999595;
+  font-weight: 600;
+}
+
+/* COMMISSION FORM */
+.commission-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: #111;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+}
+
+.form-field {
+  background: var(--black);
+  padding: 1.5rem;
+  position: relative;
+}
+.form-field label {
+  font-family: var(--font-condensed);
+  font-size: 0.85rem;
+  letter-spacing: 4px;
+  color: #ab5353;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+.form-field input,
+.form-field select,
+.form-field textarea {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #893f3f;
+  width: 100%;
+  padding: 0.5rem 0;
+  font-family: var(--font-condensed);
+  font-size: 1rem;
+  letter-spacing: 1px;
+  color: var(--white);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: var(--red);
+}
+
+.form-field select option {
+  background: #410101;
+}
+.form-field textarea {
+  resize: none;
+  min-height: 120px;
+  line-height: 1.6;
+}
+.form-field.full {
+  grid-column: 1 / -1;
+}
+
+.form-submit {
+  background: var(--black);
+  padding: 1.5rem;
+}
+.btn-submit {
+  display: block;
+  width: 100%;
+  padding: 1.25rem;
+  background: var(--red);
+  border: none;
+  font-family: var(--font-condensed);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: var(--white);
+  text-transform: uppercase;
+  cursor: none;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn-submit:hover {
+  background: var(--red-dark);
+  transform: translateY(-1px);
+}
+
+/* SUCCESS STATE */
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--black);
+}
+.form-success.show {
+  display: block;
+}
+.form-success h3 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+.form-success p {
+  font-family: var(--font-condensed);
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  color: #555;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .tiers-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+  }
+  .form-section {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .tiers-section,
+  .form-section {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  .page-header {
+    padding: 7rem 1.25rem 3rem;
+  }
+  .status-badge {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    padding: 0.5rem 1rem;
+    margin-top: 1.5rem;
+  }
+  .tiers-label h2 {
+    font-size: 1.8rem;
+  }
+  .tiers-grid {
+    max-width: 100%;
+  }
+  .tier-card {
+    padding: 2rem 1.25rem;
+  }
+  .tier-name {
+    font-size: 1.5rem;
+  }
+  .tier-features li {
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+  }
+  .form-section {
+    padding-bottom: 4rem;
+  }
+  .form-info h2 {
+    font-size: 2rem;
+  }
+  .form-field {
+    padding: 1.25rem 1rem;
+  }
+  .form-field label {
+    letter-spacing: 3px;
+  }
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    font-size: 1rem; /* prevent iOS zoom on focus */
+  }
+  .btn-submit {
+    letter-spacing: 3px;
+    font-size: 0.75rem;
+    cursor: pointer;
+  }
+  .step-text {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+  }
+  .tier-desc {
+    font-size: 0.9rem;
+  }
+  .tier-cta {
+    padding: 0.9rem;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    cursor: pointer;
+  }
+}
