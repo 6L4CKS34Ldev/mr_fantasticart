@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 e.preventDefault();
                 const tierName = btn.closest('.tier-card')?.querySelector('.tier-name')?.textContent;
                 if (tierName) {
-                    const optionToSelect = [...ftierSelect.options].find(o => o.text.startsWith(tierName));
+                    const optionToSelect = [...ftierSelect.options].find(o => o.text.toLowerCase().startsWith(tierName.toLowerCase()));
                     if (optionToSelect) ftierSelect.value = optionToSelect.text;
                 }
                 document.getElementById('commission-form')?.scrollIntoView({ behavior: 'smooth' });

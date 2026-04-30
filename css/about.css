@@ -236,6 +236,12 @@ a.about-handle:hover {
   align-items: stretch;
 }
 
+.bts-col {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
 .bts-img {
   overflow: hidden;
   position: relative;

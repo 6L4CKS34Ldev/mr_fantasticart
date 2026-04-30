@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Favicon - Primary -->
 <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg">
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
 <link rel="shortcut icon" href="/favicon/favicon.ico">
@@ -16,12 +15,13 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/checkout.css">
 <meta name="robots" content="noindex, follow">
+
+<script src="https://js.paystack.co/v1/inline.js"></script>
 </head>
 <body>
 
 <div class="cursor" id="cursor"></div>
 
-<!-- NAV -->
 <nav>
   <a href="index.html" class="nav-logo">
     <img src="images/FantasticLogo.svg" alt="MR.FANTASTIC Logo" class="logo-img">
@@ -40,7 +40,6 @@
   </div>
 </nav>
 
-<!-- MENU OVERLAY -->
 <div class="menu-overlay" id="menuOverlay">
   <a href="index.html">Home</a>
   <a href="portfolio.html">Portfolio</a>
@@ -56,10 +55,8 @@
   </div>
 </div>
 
-<!-- CHECKOUT WRAPPER -->
 <main class="checkout-page">
 
-  <!-- STEP INDICATOR -->
   <div class="checkout-steps">
     <div class="checkout-step active" id="stepDot1">
       <div class="step-dot">1</div>
@@ -77,12 +74,11 @@
     </div>
   </div>
 
+  <div id="checkoutMain">
   <div class="checkout-layout">
 
-    <!-- LEFT: FORM PANELS -->
     <div class="checkout-form-col">
 
-      <!-- ── STEP 1: DELIVERY ─────────────────────────── -->
       <div class="checkout-panel" id="panelDelivery">
         <div class="panel-header">
           <span class="section-label">Step 01</span>
@@ -100,7 +96,7 @@
           </div>
           <div class="cf-field">
             <label for="coPhone">Mobile number <span class="req">*</span></label>
-            <input type="tel" id="coPhone" placeholder="+1 234 567 8900" autocomplete="off">
+            <input type="tel" id="coPhone" placeholder="+233 24 000 0000" autocomplete="off">
           </div>
           <div class="cf-field cf-full">
             <label for="coAddr">Delivery address <span class="req">*</span></label>
@@ -145,7 +141,6 @@
         <p class="back-link"><a href="shop.html">← Back to shop</a></p>
       </div>
 
-      <!-- ── STEP 2: PAYMENT ──────────────────────────── -->
       <div class="checkout-panel" id="panelPayment" style="display:none;">
         <div class="panel-header">
           <span class="section-label">Step 02</span>
@@ -154,69 +149,22 @@
 
         <div class="payment-methods">
 
-          <label class="payment-option" id="payCard">
-            <input type="radio" name="payMethod" value="card">
+          <label class="payment-option" id="payPaystack">
+            <input type="radio" name="payMethod" value="paystack">
             <div class="pay-radio-box">
               <div class="pay-icon">
                 <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
               </div>
               <div class="pay-info">
-                <span class="pay-name">Credit / Debit Card</span>
-                <span class="pay-sub">Visa, Mastercard, Amex</span>
+                <span class="pay-name">Card / Mobile Money / Bank</span>
+                <span class="pay-sub">Powered by Paystack · Secure · Instant</span>
               </div>
               <div class="pay-check">✓</div>
             </div>
-            <div class="pay-details card-details">
-              <div class="cf-grid">
-                <div class="cf-field cf-full">
-                  <label>Card number</label>
-                  <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" autocomplete="off">
-                </div>
-                <div class="cf-field">
-                  <label>Expiry</label>
-                  <input type="text" id="cardExpiry" placeholder="MM / YY" maxlength="7" autocomplete="off">
-                </div>
-                <div class="cf-field">
-                  <label>CVV</label>
-                  <input type="text" id="cardCvv" placeholder="123" maxlength="4" autocomplete="off">
-                </div>
-                <div class="cf-field cf-full">
-                  <label>Name on card</label>
-                  <input type="text" id="cardName" placeholder="As it appears on card" autocomplete="off">
-                </div>
-              </div>
-            </div>
-          </label>
-
-          <label class="payment-option" id="payMomo">
-            <input type="radio" name="payMethod" value="momo">
-            <div class="pay-radio-box">
-              <div class="pay-icon">
-                <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="18" r="1"/><line x1="9" y1="7" x2="15" y2="7"/></svg>
-              </div>
-              <div class="pay-info">
-                <span class="pay-name">Mobile Money</span>
-                <span class="pay-sub">MTN, Vodafone, AirtelTigo</span>
-              </div>
-              <div class="pay-check">✓</div>
-            </div>
-            <div class="pay-details momo-details">
-              <div class="cf-grid">
-                <div class="cf-field">
-                  <label>Network</label>
-                  <select id="momoNetwork">
-                    <option value="">Select network</option>
-                    <option>MTN Mobile Money</option>
-                    <option>Vodafone Cash</option>
-                    <option>AirtelTigo Money</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-                <div class="cf-field">
-                  <label>MoMo number</label>
-                  <input type="tel" id="momoNumber" placeholder="024 XXX XXXX" autocomplete="off">
-                </div>
-              </div>
+            <div class="pay-details paystack-details">
+              <p class="pay-transfer-note">
+                A secure Paystack popup will open. Pay by <strong>card, MoMo, or bank transfer</strong> — all options are inside. Your payment is processed in your local currency.
+              </p>
             </div>
           </label>
 
@@ -228,7 +176,7 @@
               </div>
               <div class="pay-info">
                 <span class="pay-name">PayPal</span>
-                <span class="pay-sub">Pay via your PayPal account</span>
+                <span class="pay-sub">International customers</span>
               </div>
               <div class="pay-check">✓</div>
             </div>
@@ -239,6 +187,9 @@
                   <input type="email" id="paypalEmail" placeholder="your@paypal.com" autocomplete="off">
                 </div>
               </div>
+              <p class="pay-transfer-note" style="margin-top:0.75rem;">
+                A PayPal payment request will be sent to your email once your order is confirmed. Price charged in <strong>USD</strong>.
+              </p>
             </div>
           </label>
 
@@ -267,7 +218,6 @@
         </div>
       </div>
 
-      <!-- ── STEP 3: CONFIRM ──────────────────────────── -->
       <div class="checkout-panel" id="panelConfirm" style="display:none;">
         <div class="panel-header">
           <span class="section-label">Step 03</span>
@@ -297,7 +247,7 @@
         <div class="confirm-terms">
           <label class="terms-check">
             <input type="checkbox" id="agreeTerms">
-            <span>I confirm my details are correct and agree to MR.FANTASTIC's order terms.</span>
+            <span>I confirm my details are correct and agree to  <button type="button" id="openTermsModalBtn" class="terms-link-btn">MR.FANTASTIC's order terms</button>.</span>
           </label>
         </div>
 
@@ -307,10 +257,7 @@
         </div>
       </div>
 
-    </div><!-- END .checkout-form-col -->
-
-    <!-- RIGHT: ORDER SUMMARY SIDEBAR -->
-    <aside class="checkout-sidebar">
+    </div><aside class="checkout-sidebar">
       <div class="sidebar-inner">
         <span class="section-label">Your order</span>
 
@@ -327,6 +274,10 @@
             <span>Format</span>
             <span id="sidebarFormat">—</span>
           </div>
+          <div class="sidebar-row">
+            <span>Currency</span>
+            <span id="sidebarCurrency">USD</span>
+          </div>
           <div class="sidebar-row sidebar-total-row">
             <span>Total</span>
             <span id="sidebarTotal" class="sidebar-price">—</span>
@@ -336,7 +287,7 @@
         <div class="sidebar-trust">
           <div class="trust-item">
             <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            <span>Secure checkout</span>
+            <span>Payments secured by Paystack</span>
           </div>
           <div class="trust-item">
             <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
@@ -350,10 +301,48 @@
       </div>
     </aside>
 
-  </div><!-- END .checkout-layout -->
+  </div><div class="terms-modal" id="termsModal" role="dialog" aria-modal="true">
+    <div class="terms-modal-inner">
+      <button class="terms-modal-close" id="termsModalClose" aria-label="Close modal">✕ &nbsp;CLOSE</button>
+      
+      <div class="terms-modal-content">
+        <span class="section-label">The fine print</span>
+        <h2>ORDER<br>TERMS</h2>
+        
+        <div class="terms-section-block">
+          <h3><span>01.</span> GENERAL STORE ORDERS</h3>
+          <p>All items in the shop (prints, phone covers, stickers, etc.) are fulfilled to order. MR.FANTASTIC is not responsible for missing packages due to incorrect addresses provided at checkout.</p>
+          <p>Because prints and merchandise are custom-produced upon ordering, <strong>all sales are final</strong>. Please ensure you have selected the correct format before confirming.</p>
+        </div>
 
-  <!-- SUCCESS STATE -->
-  <div class="checkout-success" id="checkoutSuccess" style="display:none;">
+        <div class="terms-section-block">
+          <h3><span>02.</span> COMMISSION AGREEMENTS</h3>
+          <p>Custom commissions require a <strong>50% non-refundable deposit</strong> to lock in your slot. The remaining 50% is due upon completion.</p>
+          <ul>
+            <li><strong>Revisions:</strong> Includes minor adjustments to color/lighting. Complete redraws incur an additional fee.</li>
+            <li><strong>Cancellation:</strong> If cancelled after work begins, the deposit is retained to cover labor.</li>
+          </ul>
+        </div>
+
+        <div class="terms-section-block">
+          <h3><span>03.</span> COPYRIGHT &amp; USAGE</h3>
+          <p>Purchasing a print or a standard commission grants you ownership of the physical piece or personal use of the digital file. <strong>It does not transfer the copyright.</strong></p>
+          <ul>
+            <li>You may not reproduce or resell the artwork for profit.</li>
+            <li>You may post commissioned pieces on personal social media, provided you tag <strong>@mr.fantastic_himself</strong>.</li>
+          </ul>
+        </div>
+
+        <div class="terms-modal-footer">
+          <button type="button" class="modal-agree-btn" id="modalAgreeBtn">I AGREE TO THESE TERMS</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  </div><div class="checkout-success" id="checkoutSuccess" style="display:none;">
     <div class="success-glow"></div>
     <div class="success-content">
       <span class="section-label">Order received</span>
@@ -369,7 +358,6 @@
 
 </main>
 
-<!-- FOOTER -->
 <footer>
   <a href="index.html" class="footer-logo">MR<span>.</span>FANTASTIC</a>
   <div class="footer-links">
@@ -383,6 +371,7 @@
 </footer>
 
 <script src="js/script.js"></script>
+<script src="js/currency.js"></script>
 <script src="js/shop.js"></script>
 </body>
 </html>
