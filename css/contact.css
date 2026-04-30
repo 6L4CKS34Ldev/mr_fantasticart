@@ -311,6 +311,12 @@
   .contact-form-wrap {
     padding: 2rem 1.5rem;
   }
+  .channel-item {
+    cursor: pointer;
+  }
+  .cf-submit button {
+    cursor: pointer;
+  }
 }
 
 @media (max-width: 480px) {

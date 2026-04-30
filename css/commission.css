@@ -325,6 +325,12 @@
   .form-row {
     grid-template-columns: 1fr;
   }
+  .btn-submit {
+    cursor: pointer;
+  }
+  .tier-cta {
+    cursor: pointer;
+  }
 }
 
 @media (max-width: 480px) {
