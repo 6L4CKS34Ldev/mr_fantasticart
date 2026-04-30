@@ -9,12 +9,12 @@
 
 // Immediate fallback — guarantee window.MF_Currency is never undefined
 window.MF_Currency = {
-  code: 'USD',
-  symbol: '$',
+  code: 'GHS',
+  symbol: 'GH₵',
   rate: 1,
-  country: 'US',
+  country: 'GH',
   convert: (usdAmount) => Math.round(usdAmount),
-  format: (usdAmount) => '$' + Math.round(usdAmount).toLocaleString(),
+  format: (usdAmount) => 'GH₵' + Math.round(usdAmount).toLocaleString(),
   paystackAmount: (usdAmount) => Math.round(usdAmount * 100)
 };
 
@@ -50,18 +50,18 @@ window.MF_Currency = {
     NZ: { code: 'USD', symbol: '$',   name: 'US Dollar' },
   };
 
-  const DEFAULT_CURRENCY = { code: 'USD', symbol: '$', name: 'US Dollar' };
+  const DEFAULT_CURRENCY = { code: 'GHS', symbol: 'GH₵', name: 'Ghanaian Cedi' };
 
   /* ── Fallback: USD, no conversion needed ─────────────── */
   const setFallback = () => {
     window.MF_Currency = {
-      code:    'USD',
-      symbol:  '$',
+      code:    'GHS',
+      symbol:  'GH₵',
       rate:    1,
-      country: 'US',
+      country: 'GH',
       convert: (usdAmount) => usdAmount,
-      format:  (usdAmount) => '$' + usdAmount,
-      paystackAmount: (usdAmount) => usdAmount * 100 // cents
+      format:  (usdAmount) => 'GH₵' + usdAmount,
+      paystackAmount: (usdAmount) => usdAmount * 100
     };
     window.dispatchEvent(new Event('mf:currency:ready'));
   };
